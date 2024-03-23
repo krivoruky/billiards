@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
+import BallMenu from './BallMenu';
 
 const BilliardsGame: React.FC = () => {
     const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -149,20 +150,6 @@ const BilliardsGame: React.FC = () => {
                     position={{ left: menuPosition.x, top: menuPosition.y }}
                 />
             )}
-        </div>
-    );
-};
-
-const BallMenu: React.FC<{ onColorChange: (color: string) => void; position: { left: number; top: number } }> = ({ onColorChange, position }) => {
-    const handleColorChange = (color: string) => {
-        onColorChange(color);
-    };
-
-    return (
-        <div style={{ position: 'absolute', left: position.left, top: position.top }}>
-            <button onClick={() => handleColorChange('red')}>Red</button>
-            <button onClick={() => handleColorChange('green')}>Green</button>
-            <button onClick={() => handleColorChange('blue')}>Blue</button>
         </div>
     );
 };
